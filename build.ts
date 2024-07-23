@@ -1,5 +1,5 @@
-import { glob } from "glob";
 import { execSync } from "node:child_process";
+import { glob } from "glob";
 
 const tsFiles = await glob("src/**/*.ts");
 
