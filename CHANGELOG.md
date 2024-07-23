@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.0.5
+
+### Patch Changes
+
+- Fix esm issue
+
 ## 1.0.4
 
 ### Patch Changes
