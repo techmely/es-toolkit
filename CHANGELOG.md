@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.0.1
+
+### Patch Changes
+
+- fix: update script build + delete unnessary files
+
 ## 3.3.0
 
 ### Minor Changes
