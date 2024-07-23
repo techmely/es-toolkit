@@ -12,12 +12,12 @@ await Bun.build({
     "src/getDataPath.ts",
     "src/isFileReadable.ts",
     "src/isStream/index.ts",
-    "src/readFile/index.ts",
+    "src/readFile.ts",
     "src/getAppVersion.ts",
     "src/getCurrentGitBranch.ts",
     "src/getGitLastCommitHash.ts",
     "src/getGitTags.ts",
-    "src/getLastGitTags.ts",
+    "src/getLastGitTag.ts",
     "src/mergeStreams.ts",
     "src/writeFile.ts",
   ],
@@ -29,6 +29,5 @@ await Bun.build({
 
 execSync("bun run tsc --emitDeclarationOnly --outDir dist");
 execSync("mv dist/src/* dist");
-execSync("cp src/typing.d.ts dist");
-execSync("cp src/typing.d.ts dist");
+execSync("rm -rf dist/src");
 execSync("rm -rf dist/tsconfig.tsbuildinfo");
