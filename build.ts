@@ -1,6 +1,5 @@
 import { glob } from "glob";
 import { execSync } from "node:child_process";
-import json from "./package.json";
 
 const tsFiles = await glob("src/**/*.ts");
 

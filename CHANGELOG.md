@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.0.3
+
+### Patch Changes
+
+- Add func detect is mobile user agent function
+
 ## 1.0.2
 
 ### Patch Changes
