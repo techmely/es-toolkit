@@ -1,30 +1,18 @@
+import { glob } from "glob";
 import { execSync } from "node:child_process";
 import json from "./package.json";
 
+const tsFiles = await glob("src/**/*.ts");
+
 execSync("rm -rf dist");
 await Bun.build({
-  entrypoints: [
-    "src/index.ts",
-    "src/id.ts",
-    "src/copyDir.ts",
-    "src/emptyDir.ts",
-    "src/findNearestFile.ts",
-    "src/getDataPath.ts",
-    "src/isFileReadable.ts",
-    "src/isStream/index.ts",
-    "src/readFile.ts",
-    "src/getAppVersion.ts",
-    "src/getCurrentGitBranch.ts",
-    "src/getGitLastCommitHash.ts",
-    "src/getGitTags.ts",
-    "src/getLastGitTag.ts",
-    "src/mergeStreams.ts",
-    "src/writeFile.ts",
-  ],
+  entrypoints: tsFiles,
   outdir: "dist",
-  target: "bun",
+  target: "node",
+  format: "esm",
+  splitting: true,
   sourcemap: "inline",
-  external: [...Object.keys(json.peerDependencies)],
+  external: ["*"],
 });
 
 execSync("bun run tsc --emitDeclarationOnly --outDir dist");

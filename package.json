@@ -4,13 +4,12 @@
   "description": "Collection of helpful JavaScript / TypeScript utils",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
-  "homepage": "https://about.techmely.com/libraries/utils",
+  "homepage": "https://about.techmely.com/libraries/es-toolkit",
   "bugs": {
     "url": "https://github.com/techmely/essential-packages/issues"
   },
   "repository": {
-    "url": "git+https://github.com/techmely/essential-packages.git#main",
-    "directory": "ts-package/utils"
+    "url": "git+https://github.com/techmely/es-toolkit.git#main"
   },
   "type": "module",
   "main": "index.js",
@@ -29,105 +28,6 @@
     "build": "cross-env NODE_ENV=production bun run ./build.ts",
     "release": "bun run ./release.ts",
     "prepare": "husky"
-  },
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "import": {
-        "types": "./index.d.ts",
-        "default": "./index.js"
-      }
-    },
-    "./id": {
-      "import": {
-        "types": "./id.d.ts",
-        "default": "./id.js"
-      }
-    },
-    "./copyDir": {
-      "import": {
-        "types": "./copyDir.d.ts",
-        "default": "./copyDir.js"
-      }
-    },
-    "./emptyDir": {
-      "import": {
-        "types": "./emptyDir.d.ts",
-        "default": "./emptyDir.js"
-      }
-    },
-    "./findNearestFile": {
-      "import": {
-        "types": "./findNearestFile.d.ts",
-        "default": "./findNearestFile.js"
-      }
-    },
-    "./getDataPath": {
-      "import": {
-        "types": "./getDataPath.d.ts",
-        "default": "./getDataPath.js"
-      }
-    },
-    "./isFileReadable": {
-      "import": {
-        "types": "./isFileReadable.d.ts",
-        "default": "./isFileReadable.js"
-      }
-    },
-    "./isStream": {
-      "import": {
-        "types": "./isStream.d.ts",
-        "default": "./isStream.js"
-      }
-    },
-    "./mergeStreams": {
-      "import": {
-        "types": "./mergeStreams.d.ts",
-        "default": "./mergeStreams.js"
-      }
-    },
-    "./readFile": {
-      "import": {
-        "types": "./readFile.d.ts",
-        "default": "./readFile.js"
-      }
-    },
-    "./getAppVersion": {
-      "import": {
-        "types": "./getAppVersion.d.ts",
-        "default": "./getAppVersion.js"
-      }
-    },
-    "./getCurrentGitBranch": {
-      "import": {
-        "types": "./getCurrentGitBranch.d.ts",
-        "default": "./getCurrentGitBranch.js"
-      }
-    },
-    "./getGitLastCommitHash": {
-      "import": {
-        "types": "./getGitLastCommitHash.d.ts",
-        "default": "./getGitLastCommitHash.js"
-      }
-    },
-    "./getGitTags": {
-      "import": {
-        "types": "./getGitTags.d.ts",
-        "default": "./getGitTags.js"
-      }
-    },
-    "./getLastGitTag": {
-      "import": {
-        "types": "./getLastGitTag.d.ts",
-        "default": "./getLastGitTag.js"
-      }
-    },
-    "./writeFile": {
-      "import": {
-        "types": "./writeFile.d.ts",
-        "default": "./writeFile.js"
-      }
-    }
   },
   "peerDependencies": {
     "dayjs": "^1.11.11",
