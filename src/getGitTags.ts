@@ -1,6 +1,6 @@
-import { $ } from "execa";
+import { execSync } from "node:child_process";
 
 export async function getGitTags() {
-  const tags = await $`git --no-pager tag -l --sort=creatordate`;
-  return String(tags).split("\n");
+  const tags = execSync("git --no-pager tag -l --sort=creatordate").toString();
+  return tags.split("\n");
 }

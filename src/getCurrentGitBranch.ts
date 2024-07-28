@@ -1,5 +1,5 @@
-import { $ } from "execa";
+import { execSync } from "node:child_process";
 
 export async function getCurrentGitBranch() {
-  return await $`git rev-parse --abbrev-ref HEAD`;
+  return execSync("git rev-parse --abbrev-ref HEAD").toString();
 }

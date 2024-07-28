@@ -1,6 +1,6 @@
-import { $ } from "execa";
+import { execSync } from "node:child_process";
 
 export async function getLastGitCommitHash() {
-  const commitHash = await $`git rev-parse --short HEAD`;
+  const commitHash = execSync("git rev-parse --short HEAD").toString();
   return commitHash;
 }
