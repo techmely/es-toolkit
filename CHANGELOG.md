@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.0.6
+
+### Patch Changes
+
+- Refactor: using execSync instead of execa
+
 ## 1.0.5
 
 ### Patch Changes
