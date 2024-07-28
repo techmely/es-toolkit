@@ -159,6 +159,7 @@ export * from "./toArrayBuffer";
 export * from "./toISOStringTimezone";
 export * from "./toNumber";
 export * from "./truncate";
+export * from "./utm";
 export * from "./useObserverElement";
 export * from "./webkitVersion";
 
