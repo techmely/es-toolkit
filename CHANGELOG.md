@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.0.8
+
+### Patch Changes
+
+- Fix: update cookie services
+
 ## 1.0.7
 
 ### Patch Changes

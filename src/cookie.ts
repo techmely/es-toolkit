@@ -1,4 +1,3 @@
-import type { NodeEnv } from "@techmely/types";
 import { isDate } from "./isDate";
 
 /**
@@ -399,20 +398,25 @@ export const listenCookieChange = (
   }, interval);
 };
 
-export class CookieService {
-  public nodeEnv: NodeEnv;
+export type CookieServiceOptions = {
+  domain: string;
+  /**
+   * @default 'token'
+   */
+  tokenName?: string;
+};
 
+export class CookieService {
   public env: string;
 
   public domain: string;
 
   public tokenName: string;
 
-  public constructor(nodeEnv: NodeEnv, env: string, cookieDomain: string) {
-    this.nodeEnv = nodeEnv;
+  public constructor(env: string, options: CookieServiceOptions) {
     this.env = env;
-    this.domain = cookieDomain;
-    this.tokenName = `token_${this.env}`;
+    this.domain = options.domain;
+    this.tokenName = `${options.tokenName || "token"}_${env}`;
   }
 
   get(name: string, options?: CookieParseOptions): string | undefined {
@@ -443,11 +447,8 @@ export class CookieService {
     }
   }
 
-  setToken(token: string) {
-    document.cookie =
-      this.env === "development"
-        ? `${this.tokenName}=${token}; path=/; Secure`
-        : `${this.tokenName}=${token}; path=/; Domain=${this.domain}; Secure`;
+  setToken(token: string, options?: CookieSerializeOptions) {
+    this.set(this.tokenName, token, options);
   }
 
   getToken() {
@@ -456,9 +457,6 @@ export class CookieService {
   }
 
   clearToken() {
-    document.cookie =
-      this.env === "development"
-        ? `${this.tokenName}=; path=/; Secure`
-        : `${this.tokenName}=; path=/; Domain=${this.domain}; Secure`;
+    this.set(this.tokenName, "");
   }
 }
