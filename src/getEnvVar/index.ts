@@ -2,7 +2,7 @@
 // always run this method in advance (i.e. upon initialization) so that the error is thrown as early as possible
 // caching the values improves performance - accessing process.env many times is bad
 
-import { envShims } from "../env";
+import { envShims } from "../object/env";
 
 const cache: any = {};
 
