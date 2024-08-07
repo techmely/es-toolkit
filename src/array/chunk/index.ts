@@ -21,8 +21,14 @@ export function chunk<T>(array: readonly T[], size = 1): T[][] {
 
   const chunkLength = Math.ceil(array.length / size);
 
-  return Array.from({ length: chunkLength }, (_v, i) => {
-    const start = i * size;
-    return array.slice(start, start + size);
-  });
+  const result: T[][] = Array(chunkLength);
+
+  for (let index = 0; index < chunkLength; index++) {
+    const start = index * size;
+    const end = start + size;
+
+    result[index] = array.slice(start, end);
+  }
+
+  return result;
 }
