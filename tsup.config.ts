@@ -2,10 +2,10 @@ import { defineConfig } from "tsup";
 
 export default [
   defineConfig({
-    format: ["cjs", "esm"],
-    entry: ["src/*.ts", "src/*/*.ts", "!**/*.test.,ts"],
+    format: ["cjs", "esm", "iife"],
+    entry: ["src/*.ts", "src/**/*.ts", "!**/*.test.,ts"],
     outDir: "dist/src",
-    sourcemap: true,
+    sourcemap: "inline",
     clean: true,
   }),
 ];

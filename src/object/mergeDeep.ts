@@ -1,5 +1,5 @@
 import type { MergeDeep } from "@techmely/types";
-import { isObject } from "./predicate/isObject";
+import { isObject } from "../predicate";
 
 /**
  * @description Deep merge Object

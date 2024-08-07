@@ -1,6 +1,6 @@
 import type { StringEnum } from "@techmely/types";
-import { invariant } from "../invariant";
-import { isBrowser } from "../isBrowser";
+import { invariant } from "../../common";
+import { isBrowser } from "../../predicate";
 
 type Child = string | Node | null | undefined | readonly Child[];
 

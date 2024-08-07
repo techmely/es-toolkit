@@ -1,4 +1,4 @@
-import { cacheStringFunction } from "../string/cacheStringFunc";
+import { cacheStringFunction } from "../cacheStringFunc";
 
 /**
  * @example pascalToKebabCase('HelloWorld') --> hello-world
