@@ -76,5 +76,8 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": ["techmely", "techmely-utils", "techmely es toolkit"]
+  "keywords": ["techmely", "techmely-utils", "techmely es toolkit"],
+  "engines": {
+    "node": ">=20"
+  }
 }
