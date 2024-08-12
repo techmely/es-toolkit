@@ -1,6 +1,6 @@
 {
   "name": "@techmely/es-toolkit",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Collection of helpful JavaScript / TypeScript utils",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
@@ -76,7 +76,11 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": ["techmely", "techmely-utils", "techmely es toolkit"],
+  "keywords": [
+    "techmely",
+    "techmely-utils",
+    "techmely es toolkit"
+  ],
   "engines": {
     "node": ">=20"
   }

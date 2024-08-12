@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.1.0
+
+### Minor Changes
+
+- Refactor code structure + add get bundle size of a function in lib
+
 ## 1.0.8
 
 ### Patch Changes
