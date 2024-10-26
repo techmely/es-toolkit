@@ -6,14 +6,14 @@ import path from "node:path";
  * Pass an optional `skip` array to preserve files in the root directory.
  */
 export function emptyDir(dir: string, skip?: string[]): void {
-  for (const file of fs.readdirSync(dir)) {
-    if (skip?.includes(file)) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (skip?.includes(entry.name)) {
       continue;
     }
-    const abs = path.resolve(dir, file);
-    // baseline is Node 12 so can't use rmSync :(
-    if (fs.lstatSync(abs).isDirectory()) {
-      emptyDir(abs);
+    const abs = path.resolve(dir, entry.name);
+    if (entry.isDirectory()) {
+      emptyDir(abs, skip);
       fs.rmdirSync(abs);
     } else {
       fs.unlinkSync(abs);
