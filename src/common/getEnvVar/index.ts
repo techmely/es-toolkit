@@ -9,8 +9,7 @@ const cache: any = {};
 export const getEnvVar = <T extends string>(variableName: string, defaultValue?: any) => {
   if (!(variableName in envShims())) {
     if (defaultValue || defaultValue === "" || defaultValue === 0) return defaultValue;
-    console.error(`Cannot find ${variableName} in environment variables. Died.`);
-    process.exit(1);
+    throw Error(`Cannot find ${variableName} in environment variables. Died.`)
   }
 
   if (cache[variableName]) return cache[variableName];

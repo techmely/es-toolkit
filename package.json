@@ -1,6 +1,6 @@
 {
   "name": "@techmely/es-toolkit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Collection of helpful JavaScript / TypeScript utils",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",

@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.1.1
+
+### Patch Changes
+
+- Remove process.exit and process.hrm in export default packages --> Not valid in edge runtime
+
 ## 1.1.0
 
 ### Minor Changes
