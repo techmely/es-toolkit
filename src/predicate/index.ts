@@ -3,7 +3,6 @@ export * from "./isAppleDevice";
 export * from "./isArray";
 export * from "./isBase64";
 export * from "./isBoolean";
-export * from "./isBot";
 export * from "./isBrowser";
 export * from "./isChrome";
 export * from "./isChromeIOS";
