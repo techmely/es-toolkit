@@ -22,16 +22,17 @@
   "scripts": {
     "lint.format": "bunx @biomejs/biome check --write .",
     "clean": "rm -f dist node_modules",
-    "test.unit": "vitest --passWithNoTests",
-    "test.unit.run": "NODE_ENV=test vitest run --passWithNoTests --isolate",
+    "test.unit": "vitest --passWithNoTests --isolate",
+    "test.unit.run": "vitest run --passWithNoTests --isolate",
     "test.unit.coverage": "vitest --coverage",
     "build": "cross-env NODE_ENV=production bun run ./build.ts",
     "build.tsup": "cross-env NODE_ENV=production tsup",
     "release": "bun run ./release.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "upgrade.deps": "npm-check-updates --dep dev,prod,peer -u"
   },
   "peerDependencies": {
-    "dayjs": "^1.11.11",
+    "dayjs": "^1.11.13",
     "base-x": "^5.0.0"
   },
   "peerDependenciesMeta": {
@@ -43,28 +44,29 @@
     }
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.3",
+    "@biomejs/biome": "1.9.4",
     "@changesets/changelog-github": "0.5.0",
-    "@changesets/cli": "2.27.7",
+    "@changesets/cli": "2.27.9",
     "@techmely/types": "1.9.0",
-    "@testing-library/jest-dom": "6.4.6",
-    "@types/bun": "1.1.6",
-    "@types/node": "20.14.10",
+    "@testing-library/jest-dom": "6.6.2",
+    "@types/bun": "1.1.12",
+    "@types/node": "22.8.1",
     "base-x": "^5.0.0",
     "chalk": "^5.3.0",
     "cross-env": "7.0.3",
-    "dayjs": "^1.11.11",
-    "happy-dom": "14.12.3",
-    "husky": "9.0.11",
+    "dayjs": "^1.11.13",
+    "happy-dom": "15.7.4",
+    "husky": "9.1.6",
     "nanoid": "^5.0.7",
-    "npm-check-updates": "16.14.20",
+    "npm-check-updates": "17.1.6",
+    "@vitest/coverage-v8": "^2.1.3",
     "time-span": "5.1.0",
-    "tslib": "^2.6.3",
-    "tsup": "8.2.2",
-    "typescript": "5.5.3",
-    "vite": "^5.3.3",
-    "vitest": "2.0.2",
-    "zx": "8.1.4"
+    "tslib": "^2.8.0",
+    "tsup": "8.3.5",
+    "typescript": "5.6.3",
+    "vite": "^5.4.10",
+    "vitest": "2.1.3",
+    "zx": "8.1.9"
   },
   "funding": [
     {
@@ -76,11 +78,7 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": [
-    "techmely",
-    "techmely-utils",
-    "techmely es toolkit"
-  ],
+  "keywords": ["techmely", "techmely-utils", "techmely es toolkit"],
   "engines": {
     "node": ">=20"
   }
