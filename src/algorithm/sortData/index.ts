@@ -1,4 +1,4 @@
-import { isNumber } from "../../predicate";
+import { isNumber } from "../../predicate/isNumber";
 import { SortDirection } from "../sortByKey";
 
 type SortOptions = {

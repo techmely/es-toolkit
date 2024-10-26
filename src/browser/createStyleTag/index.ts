@@ -1,5 +1,5 @@
-import { invariant } from "../../common";
-import { isBrowser } from "../../predicate";
+import { invariant } from "../../common/invariant";
+import { isBrowser } from "../../predicate/isBrowser";
 
 interface CreateStyleTagOptions extends Record<string, any> {
   id: string;

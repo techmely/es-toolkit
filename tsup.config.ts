@@ -5,7 +5,6 @@ export default [
     format: ["cjs", "esm", "iife"],
     entry: ["src/*.ts", "src/**/*.ts", "!**/*.test.,ts"],
     outDir: "dist/src",
-    sourcemap: "inline",
     clean: true,
   }),
 ];

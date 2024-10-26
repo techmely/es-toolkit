@@ -1,5 +1,5 @@
 import type { EntityId } from "@techmely/types";
-import { isNumber } from "../../predicate";
+import { isNumber } from "../../predicate/isNumber";
 import { dividePrecision } from "../numberDivinePrecision";
 import { timesPrecision } from "../numberTimesPrecision";
 

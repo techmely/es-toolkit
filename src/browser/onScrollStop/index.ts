@@ -1,4 +1,4 @@
-import { isServer } from "../../predicate";
+import { isServer } from "../../predicate/isServer";
 
 /**
  * Runs the callback whenever the user has stopped scrolling.

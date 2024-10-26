@@ -1,4 +1,4 @@
-import { isServer } from "../../predicate";
+import { isServer } from "../../predicate/isServer";
 
 /**
  * Smooth-scrolls to the top of the page.
