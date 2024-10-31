@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.1.2
+
+### Patch Changes
+
+- Add typed boolean guard function
+
 ## 1.1.1
 
 ### Patch Changes
