@@ -3,9 +3,9 @@ import { defineConfig } from "tsup";
 export default [
   defineConfig({
     format: ["cjs", "esm", "iife"],
-    entry: ["src/*.ts", "src/**/*.ts", "!**/*.test.,ts"],
+    entry: ["src/*.ts", "src/**/*.ts", "!**/*.test.ts"],
     outDir: "dist/src",
-    sourcemap: "inline",
     clean: true,
+    external: ["dayjs", "base-x"],
   }),
 ];
