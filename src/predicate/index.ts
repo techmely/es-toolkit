@@ -58,3 +58,4 @@ export * from "./isToday";
 export * from "./isUndefined";
 export * from "./isWebkit";
 export * from "./isWindow";
+export * from "./typedBoolean";
