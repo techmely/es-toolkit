@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test, vi } from "vitest";
-import emitter, { type Emitter, type EventHandlerMap } from ".";
+import { type Emitter, type EventHandlerMap, emitter } from ".";
 
 describe("Emitter", () => {
   const eventType = Symbol("eventType");
@@ -23,9 +23,9 @@ describe("Emitter", () => {
 
   describe("on emitter", () => {
     test("Should register handler for new type", () => {
-      const noop = () => { };
-      const foo = () => { };
-      const symbol = () => { };
+      const noop = () => {};
+      const foo = () => {};
+      const symbol = () => {};
 
       instance.on("foo", noop);
       instance.on("constructor", foo);
@@ -37,8 +37,8 @@ describe("Emitter", () => {
     });
 
     test("Should append handler for existing type", () => {
-      const noop = () => { };
-      const foo = () => { };
+      const noop = () => {};
+      const foo = () => {};
       instance.on("constructor", foo);
       instance.on("constructor", noop);
       expect(events.get("constructor")).toStrictEqual([foo, noop]);
@@ -47,7 +47,7 @@ describe("Emitter", () => {
 
   describe("off emitter", () => {
     test("Should not normalize case + remove handler correctly", () => {
-      const lol = () => { };
+      const lol = () => {};
       instance.on("LOL", lol);
       instance.on("foo", lol);
       instance.on("FOO", lol);
@@ -62,7 +62,7 @@ describe("Emitter", () => {
     });
 
     test("Should remove only the 1st matching listener", () => {
-      const kimochi = () => { };
+      const kimochi = () => {};
       instance.on("kimo:chi!", kimochi);
       instance.on("kimo:chi!", kimochi);
       instance.off("kimo:chi!", kimochi);
