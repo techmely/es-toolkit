@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.3.1
+
+### Patch Changes
+
+- Fix cannot serialize cookie with object value
+
 ## 1.3.0
 
 ### Minor Changes
