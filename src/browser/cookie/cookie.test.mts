@@ -17,7 +17,10 @@ describe("parseCookie(str)", () => {
   });
 
   it("should ignore OWS", () => {
-    expect(parseCookie("FOO    = bar;   baz  =   raz")).toStrictEqual({ FOO: "bar", baz: "raz" });
+    expect(parseCookie("FOO    = bar;   baz  =   raz")).toStrictEqual({
+      FOO: "bar",
+      baz: "raz",
+    });
   });
 
   it("should parse cookie with empty value", () => {
@@ -29,11 +32,16 @@ describe("parseCookie(str)", () => {
       foo: "bar=123456789&name=Magic+Mouse",
     });
 
-    expect(parseCookie("email=%20%22%2c%3b%2f")).toStrictEqual({ email: ' ",;/' });
+    expect(parseCookie("email=%20%22%2c%3b%2f")).toStrictEqual({
+      email: ' ",;/',
+    });
   });
 
   it("should return original value on escape error", () => {
-    expect(parseCookie("foo=%1;bar=bar")).toStrictEqual({ foo: "%1", bar: "bar" });
+    expect(parseCookie("foo=%1;bar=bar")).toStrictEqual({
+      foo: "%1",
+      bar: "bar",
+    });
   });
 
   it("should ignore cookies without value", () => {
@@ -42,9 +50,18 @@ describe("parseCookie(str)", () => {
   });
 
   it("should ignore duplicate cookies", () => {
-    expect(parseCookie("foo=%1;bar=bar;foo=boo")).toStrictEqual({ foo: "%1", bar: "bar" });
-    expect(parseCookie("foo=false;bar=bar;foo=true")).toStrictEqual({ foo: "false", bar: "bar" });
-    expect(parseCookie("foo=;bar=bar;foo=boo")).toStrictEqual({ foo: "", bar: "bar" });
+    expect(parseCookie("foo=%1;bar=bar;foo=boo")).toStrictEqual({
+      foo: "%1",
+      bar: "bar",
+    });
+    expect(parseCookie("foo=false;bar=bar;foo=true")).toStrictEqual({
+      foo: "false",
+      bar: "bar",
+    });
+    expect(parseCookie("foo=;bar=bar;foo=boo")).toStrictEqual({
+      foo: "",
+      bar: "bar",
+    });
   });
 });
 
@@ -54,7 +71,7 @@ describe("parseCookie(str, options)", () => {
       expect(
         parseCookie('foo="YmFy"', {
           decode: (v) => Buffer.from(v, "base64").toString(),
-        }),
+        })
       ).toStrictEqual({ foo: "bar" });
     });
   });
@@ -74,8 +91,24 @@ describe("serializeCookie(name, value)", () => {
   });
 
   it("should throw for invalid name", () => {
-    expect(() => serializeCookie("foo\n", "bar")).throws(/argument name is invalid/);
-    expect(() => serializeCookie("foo\u280a", "bar")).throws(/argument name is invalid/);
+    expect(() => serializeCookie("foo\n", "bar")).throws(
+      /argument name is invalid/
+    );
+    expect(() => serializeCookie("foo\u280a", "bar")).throws(
+      /argument name is invalid/
+    );
+  });
+
+  it("should ok when set value object stringify", () => {
+    const obj = {
+      foo: "bar",
+      baz: "raz",
+      id: "123",
+      token: "abc",
+    };
+    expect(serializeCookie("foo", JSON.stringify(obj))).toEqual(
+      "foo=%7B%22foo%22%3A%22bar%22%2C%22baz%22%3A%22raz%22%2C%22id%22%3A%22123%22%2C%22token%22%3A%22abc%22%7D"
+    );
   });
 });
 
@@ -84,28 +117,30 @@ describe("serializeCookie(name, value, options)", () => {
     it("should serialize domain", () => {
       expect(
         serializeCookie("foo", "bar", { domain: "example.com" }),
-        "foo=bar; Domain=example.com",
+        "foo=bar; Domain=example.com"
       );
     });
 
     it("should throw for invalid value", () => {
-      expect(() => serializeCookie("foo", "bar", { domain: "example.com\n" })).throws(
-        /option domain is invalid/,
-      );
+      expect(() =>
+        serializeCookie("foo", "bar", { domain: "example.com\n" })
+      ).throws(/option domain is invalid/);
     });
   });
 
   describe('with "encode" option', () => {
     it("should throw on non-function value", () => {
       // @ts-expect-error Ignore type check
-      expect(() => serializeCookie("foo", "bar", { encode: 42 })).throw(/option encode is invalid/);
+      expect(() => serializeCookie("foo", "bar", { encode: 42 })).throw(
+        /option encode is invalid/
+      );
     });
 
     it("should specify alternative value encoder", () => {
       expect(
         serializeCookie("foo", "bar", {
           encode: (v) => Buffer.from(v, "utf8").toString("base64"),
-        }),
+        })
       ).toEqual("foo=YmFy");
     });
 
@@ -113,7 +148,7 @@ describe("serializeCookie(name, value, options)", () => {
       expect(() =>
         serializeCookie("foo", "+ \n", {
           encode: (v) => v,
-        }),
+        })
       ).throw(/argument val is invalid/);
     });
   });
@@ -122,32 +157,36 @@ describe("serializeCookie(name, value, options)", () => {
     it("should throw on non-Date value", () => {
       expect(
         // @ts-expect-error Ignore type check
-        () => serializeCookie("foo", "bar", { expires: 42 }),
+        () => serializeCookie("foo", "bar", { expires: 42 })
       ).throws(/option expires is invalid/);
     });
 
     it("should throw on invalid date", () => {
-      expect(() => serializeCookie("foo", "bar", { expires: new Date(Number.NaN) })).throws(
-        /option expires is invalid/,
-      );
+      expect(() =>
+        serializeCookie("foo", "bar", { expires: new Date(Number.NaN) })
+      ).throws(/option expires is invalid/);
     });
 
     it("should set expires to given date", () => {
       expect(
         serializeCookie("foo", "bar", {
           expires: new Date(Date.UTC(2000, 11, 24, 10, 30, 59, 900)),
-        }),
+        })
       ).toEqual("foo=bar; Expires=Sun, 24 Dec 2000 10:30:59 GMT");
     });
   });
 
   describe('with "httpOnly" option', () => {
     it("should include httpOnly flag when true", () => {
-      expect(serializeCookie("foo", "bar", { httpOnly: true })).toBe("foo=bar; HttpOnly");
+      expect(serializeCookie("foo", "bar", { httpOnly: true })).toBe(
+        "foo=bar; HttpOnly"
+      );
     });
 
     it("should not include httpOnly flag when false", () => {
-      expect(serializeCookie("foo", "bar", { httpOnly: false })).toEqual("foo=bar");
+      expect(serializeCookie("foo", "bar", { httpOnly: false })).toEqual(
+        "foo=bar"
+      );
     });
   });
 
@@ -155,43 +194,61 @@ describe("serializeCookie(name, value, options)", () => {
     it("should throw when not a number", () => {
       // @ts-expect-error Ignore type check
       expect(() => serializeCookie("foo", "bar", { maxAge: "buzz" })).throws(
-        /option maxAge is invalid/,
+        /option maxAge is invalid/
       );
     });
 
     it("should throw when Infinity", () => {
-      expect(() => serializeCookie("foo", "bar", { maxAge: Number.POSITIVE_INFINITY })).throws(
-        /option maxAge is invalid/,
-      );
+      expect(() =>
+        serializeCookie("foo", "bar", { maxAge: Number.POSITIVE_INFINITY })
+      ).throws(/option maxAge is invalid/);
     });
 
     it("should set max-age to value", () => {
-      expect(serializeCookie("foo", "bar", { maxAge: 1000 })).toEqual("foo=bar; Max-Age=1000");
+      expect(serializeCookie("foo", "bar", { maxAge: 1000 })).toEqual(
+        "foo=bar; Max-Age=1000"
+      );
       // @ts-expect-error Ignore type check
-      expect(serializeCookie("foo", "bar", { maxAge: "1000" })).toEqual("foo=bar; Max-Age=1000");
-      expect(serializeCookie("foo", "bar", { maxAge: 0 })).toEqual("foo=bar; Max-Age=0");
+      expect(serializeCookie("foo", "bar", { maxAge: "1000" })).toEqual(
+        "foo=bar; Max-Age=1000"
+      );
+      expect(serializeCookie("foo", "bar", { maxAge: 0 })).toEqual(
+        "foo=bar; Max-Age=0"
+      );
       // @ts-expect-error Ignore type check
-      expect(serializeCookie("foo", "bar", { maxAge: "0" })).toEqual("foo=bar; Max-Age=0");
+      expect(serializeCookie("foo", "bar", { maxAge: "0" })).toEqual(
+        "foo=bar; Max-Age=0"
+      );
     });
 
     it("should set max-age to integer value", () => {
-      expect(serializeCookie("foo", "bar", { maxAge: 3.14 })).toEqual("foo=bar; Max-Age=3");
-      expect(serializeCookie("foo", "bar", { maxAge: 3.99 })).toEqual("foo=bar; Max-Age=3");
+      expect(serializeCookie("foo", "bar", { maxAge: 3.14 })).toEqual(
+        "foo=bar; Max-Age=3"
+      );
+      expect(serializeCookie("foo", "bar", { maxAge: 3.99 })).toEqual(
+        "foo=bar; Max-Age=3"
+      );
     });
 
     it("should not set when null", () => {
       // @ts-expect-error Ignore type check
-      expect(serializeCookie("foo", "bar", { maxAge: null })).toEqual("foo=bar");
+      expect(serializeCookie("foo", "bar", { maxAge: null })).toEqual(
+        "foo=bar"
+      );
     });
   });
 
   describe('with "path" option', () => {
     it("should serialize path", () => {
-      expect(serializeCookie("foo", "bar", { path: "/" })).toEqual("foo=bar; Path=/");
+      expect(serializeCookie("foo", "bar", { path: "/" })).toEqual(
+        "foo=bar; Path=/"
+      );
     });
 
     it("should throw for invalid value", () => {
-      expect(() => serializeCookie("foo", "bar", { path: "/\n" })).throws(/option path is invalid/);
+      expect(() => serializeCookie("foo", "bar", { path: "/\n" })).throws(
+        /option path is invalid/
+      );
     });
   });
 
@@ -199,27 +256,35 @@ describe("serializeCookie(name, value, options)", () => {
     it("should throw on invalid priority", () => {
       // @ts-expect-error Ignore type check
       expect(() => serializeCookie("foo", "bar", { priority: "foo" })).throws(
-        /option priority is invalid/,
+        /option priority is invalid/
       );
     });
 
     it("should throw on non-string", () => {
       // @ts-expect-error Ignore type check
       expect(() => serializeCookie("foo", "bar", { priority: 42 })).throws(
-        /option priority is invalid/,
+        /option priority is invalid/
       );
     });
 
     it("should set priority low", () => {
-      expect(serializeCookie("foo", "bar", { priority: "Low" })).toEqual("foo=bar; Priority=Low");
+      expect(serializeCookie("foo", "bar", { priority: "Low" })).toEqual(
+        "foo=bar; Priority=Low"
+      );
     });
 
     it("should set priority medium", () => {
-      expect(serializeCookie("foo", "bar", { priority: "Medium" }), "foo=bar; Priority=Medium");
+      expect(
+        serializeCookie("foo", "bar", { priority: "Medium" }),
+        "foo=bar; Priority=Medium"
+      );
     });
 
     it("should set priority high", () => {
-      expect(serializeCookie("foo", "bar", { priority: "High" }), "foo=bar; Priority=High");
+      expect(
+        serializeCookie("foo", "bar", { priority: "High" }),
+        "foo=bar; Priority=High"
+      );
     });
   });
 
@@ -227,48 +292,64 @@ describe("serializeCookie(name, value, options)", () => {
     it("should throw on invalid sameSite", () => {
       // @ts-expect-error Ignore type check
       expect(() => serializeCookie("foo", "bar", { sameSite: "foo" })).throws(
-        /option sameSite is invalid/,
+        /option sameSite is invalid/
       );
     });
 
     it("should set sameSite strict", () => {
       // @ts-expect-error Ignore type check
       expect(serializeCookie("foo", "bar", { sameSite: "Strict" })).toEqual(
-        "foo=bar; SameSite=Strict",
+        "foo=bar; SameSite=Strict"
       );
       expect(serializeCookie("foo", "bar", { sameSite: "strict" })).toEqual(
-        "foo=bar; SameSite=Strict",
+        "foo=bar; SameSite=Strict"
       );
     });
 
     it("should set sameSite lax", () => {
       // @ts-expect-error Ignore type check
-      expect(serializeCookie("foo", "bar", { sameSite: "Lax" })).toEqual("foo=bar; SameSite=Lax");
-      expect(serializeCookie("foo", "bar", { sameSite: "lax" })).toEqual("foo=bar; SameSite=Lax");
+      expect(serializeCookie("foo", "bar", { sameSite: "Lax" })).toEqual(
+        "foo=bar; SameSite=Lax"
+      );
+      expect(serializeCookie("foo", "bar", { sameSite: "lax" })).toEqual(
+        "foo=bar; SameSite=Lax"
+      );
     });
 
     it("should set sameSite none", () => {
       // @ts-expect-error Ignore type check
-      expect(serializeCookie("foo", "bar", { sameSite: "None" })).toEqual("foo=bar; SameSite=None");
-      expect(serializeCookie("foo", "bar", { sameSite: "none" })).toEqual("foo=bar; SameSite=None");
+      expect(serializeCookie("foo", "bar", { sameSite: "None" })).toEqual(
+        "foo=bar; SameSite=None"
+      );
+      expect(serializeCookie("foo", "bar", { sameSite: "none" })).toEqual(
+        "foo=bar; SameSite=None"
+      );
     });
 
     it("should set sameSite strict when true", () => {
-      expect(serializeCookie("foo", "bar", { sameSite: true })).toEqual("foo=bar; SameSite=Strict");
+      expect(serializeCookie("foo", "bar", { sameSite: true })).toEqual(
+        "foo=bar; SameSite=Strict"
+      );
     });
 
     it("should not set sameSite when false", () => {
-      expect(serializeCookie("foo", "bar", { sameSite: false })).toEqual("foo=bar");
+      expect(serializeCookie("foo", "bar", { sameSite: false })).toEqual(
+        "foo=bar"
+      );
     });
   });
 
   describe('with "secure" option', () => {
     it("should include secure flag when true", () => {
-      expect(serializeCookie("foo", "bar", { secure: true })).toEqual("foo=bar; Secure");
+      expect(serializeCookie("foo", "bar", { secure: true })).toEqual(
+        "foo=bar; Secure"
+      );
     });
 
     it("should not include secure flag when false", () => {
-      expect(serializeCookie("foo", "bar", { secure: false })).toEqual("foo=bar");
+      expect(serializeCookie("foo", "bar", { secure: false })).toEqual(
+        "foo=bar"
+      );
     });
   });
 });
