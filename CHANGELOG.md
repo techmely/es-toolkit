@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.3.2
+
+### Patch Changes
+
+- Add missing export deepmerge function
+
 ## 1.3.1
 
 ### Patch Changes
