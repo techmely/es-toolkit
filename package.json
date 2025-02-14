@@ -39,7 +39,7 @@
     "test.unit.run": "vitest run --passWithNoTests --isolate",
     "test.unit.coverage": "vitest --coverage",
     "build": "cross-env NODE_ENV=production tsup",
-    "release": "bun run ./release.ts",
+    "release": "npm publish",
     "prepare": "husky",
     "upgrade.deps": "npm-check-updates --dep dev,prod,peer -u"
   },
