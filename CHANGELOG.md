@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.5.0
+
+### Minor Changes
+
+- Add anotations to improve tree-shaking awareness
+
 ## 1.4.0
 
 ### Minor Changes
