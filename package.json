@@ -1,6 +1,6 @@
 {
   "name": "@techmely/es-toolkit",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Collection of helpful JavaScript / TypeScript utils",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
@@ -12,41 +12,30 @@
     "url": "git+https://github.com/techmely/es-toolkit.git#main"
   },
   "type": "module",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public",
     "directory": "dist",
     "tag": "latest"
   },
   "files": [
-    "."
+    "dist",
+    "package.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "default": "./dist/index.js"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
     },
-    "./date/*": {
-      "types": "./dist/date/*.d.ts",
-      "require": "./dist/date/*.js",
-      "default": "./dist/date/*.js"
-    },
-    "./git/*": {
-      "types": "./dist/git/*.d.ts",
-      "require": "./dist/git/*.js",
-      "default": "./dist/git/*.js"
-    },
-    "./promise/*": {
-      "types": "./dist/promise/*.d.ts",
-      "require": "./dist/promise/*.js",
-      "default": "./dist/promise/*.js"
-    },
-    "./stream/*": {
-      "types": "./dist/stream/*.d.ts",
-      "require": "./dist/stream/*.js",
-      "default": "./dist/stream/*.js"
+    "./**/*": {
+      "types": "./dist/**/*.d.ts",
+      "require": "./dist/**/*.cjs",
+      "import": "./dist/**/*.js"
     }
   },
   "scripts": {

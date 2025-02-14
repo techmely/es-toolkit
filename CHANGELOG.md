@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.5.3
+
+### Patch Changes
+
+- Update exports fields
+
 ## 1.5.2
 
 ### Patch Changes

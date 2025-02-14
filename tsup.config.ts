@@ -8,15 +8,7 @@ console.log("Removed dist folder!\n");
 export default [
   defineConfig({
     format: ["cjs", "esm"],
-    entry: [
-      "src/index.ts",
-      "src/file/**/*.ts",
-      "src/git/*.ts",
-      "src/date/**/*.ts",
-      "src/promise/**/*.ts",
-      "src/stream/**/*.ts",
-      "!**/*.test.ts",
-    ],
+    entry: ["src/index.ts", "src/**/*.ts", "!**/*.test.ts"],
     outDir: "dist/src",
     treeshake: true,
     target: "es2022",
