@@ -1,6 +1,6 @@
 {
   "name": "@techmely/es-toolkit",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Collection of helpful JavaScript / TypeScript utils",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
@@ -19,17 +19,43 @@
     "directory": "dist",
     "tag": "latest"
   },
-  "files": ["dist", "package.json", "README.md", "CHANGELOG.md", "LICENSE"],
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.js"
     },
-    "./**/*": {
-      "types": "./dist/**/*.d.ts",
-      "require": "./dist/**/*.cjs",
-      "import": "./dist/**/*.js"
+    "./date": {
+      "types": "./dist/date/index.d.ts",
+      "require": "./dist/date/index.cjs",
+      "import": "./dist/date/index.js"
+    },
+    "./git": {
+      "types": "./dist/git/index.d.ts",
+      "require": "./dist/git/index.cjs",
+      "import": "./dist/git/index.js"
+    },
+    "./promise": {
+      "types": "./dist/promise/index.d.ts",
+      "require": "./dist/promise/index.cjs",
+      "import": "./dist/promise/index.js"
+    },
+    "./stream": {
+      "types": "./dist/stream/index.d.ts",
+      "require": "./dist/stream/index.cjs",
+      "import": "./dist/stream/index.js"
+    },
+    "./file": {
+      "types": "./dist/file/index.d.ts",
+      "require": "./dist/file/index.cjs",
+      "import": "./dist/file/index.js"
     }
   },
   "scripts": {
@@ -90,7 +116,11 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": ["techmely", "techmely-utils", "techmely es toolkit"],
+  "keywords": [
+    "techmely",
+    "techmely-utils",
+    "techmely es toolkit"
+  ],
   "engines": {
     "node": ">=20"
   }
