@@ -8,6 +8,7 @@ import type { EntityId } from "@techmely/types";
  *
  * @example strip(0.09999999999999998) === 0.1 // true
  */
+// @__NO_SIDE_EFFECTS__
 export function stripPrecision(num: EntityId, precision = 15): number {
   return +Number.parseFloat(Number(num).toPrecision(precision));
 }

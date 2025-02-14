@@ -6,6 +6,7 @@
  * const b = a.filter(typedBoolean);
  * // b is [1, true, "foo"]
  */
+// @__NO_SIDE_EFFECTS__
 export const typedBoolean = Boolean as unknown as <T>(
   value: T,
 ) => value is Exclude<T, false | 0 | "" | null | undefined>;

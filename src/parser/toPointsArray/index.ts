@@ -5,6 +5,7 @@ import { isArray } from "../../predicate/isArray";
  * @param points The points to format, an array of arrays or objects
  * @returns number[][]
  */
+// @__NO_SIDE_EFFECTS__
 export function toPointsArray<
   T extends number[],
   K extends { x: number; y: number; pressure?: number },

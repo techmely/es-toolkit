@@ -6,6 +6,7 @@
  * order, until it finds one where predicate returns true. If such an element is found,
  * findLastIndex immediately returns that element index. Otherwise, findLastIndex returns -1.
  */
+// @__NO_SIDE_EFFECTS__
 export function findLastIndex<T>(
   array: T[],
   predicate: (value: T, index: number, obj: T[]) => boolean,

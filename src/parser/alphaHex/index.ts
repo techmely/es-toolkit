@@ -4,6 +4,7 @@ import { percentToHex } from "../percentToHex";
 const HEX_LENGTH = 6;
 const HEX_OPACITY_LENGTH = 8;
 
+// @__NO_SIDE_EFFECTS__
 export function alphaHex(hex: string, alpha: ComputeRange<MAXIMUM_ALLOWED_BOUNDARY>[number]) {
   if (!hex) {
     throw new Error("Hex value is required");

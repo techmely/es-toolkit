@@ -4,6 +4,7 @@ export type ResponseTime = {
   nanoseconds: number | bigint;
 };
 
+// @__NO_SIDE_EFFECTS__
 export function convertHrTime(hrtime: bigint): ResponseTime {
   const nanoseconds = hrtime;
   const number = Number(nanoseconds);

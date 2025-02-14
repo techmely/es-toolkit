@@ -6,6 +6,7 @@
  *    filterArrays(a1, a2, (a,b) => a.includes(b))
  *    ==> [{ id: 2, title: 'World' }]
  */
+// @__NO_SIDE_EFFECTS__
 export function filterArrays<A, B>(arr1: A[], arr2: B[], filterCondition: (a: A, b: B) => boolean) {
   // Phase 1: O(n*m)
   // let result: A[] = []

@@ -9,6 +9,7 @@ type Child = string | Node | null | undefined | readonly Child[];
  * @param tag
  * @param attrs | children --> Can be Record<string|number> or children[]
  */
+// @__NO_SIDE_EFFECTS__
 export function createElement(
   tag: StringEnum<keyof HTMLElementTagNameMap> | HTMLElement,
   ...children: any[]

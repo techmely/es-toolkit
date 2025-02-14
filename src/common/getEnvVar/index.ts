@@ -6,6 +6,7 @@ import { envShims } from "../../object/env";
 
 const cache: any = {};
 
+// @__NO_SIDE_EFFECTS__
 export const getEnvVar = <T extends string>(variableName: string, defaultValue?: any) => {
   if (!(variableName in envShims())) {
     if (defaultValue || defaultValue === "" || defaultValue === 0) return defaultValue;

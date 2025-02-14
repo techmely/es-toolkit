@@ -7,6 +7,7 @@ import { timesPrecision } from "../numberTimesPrecision";
  *
  * @param nums The numbers to subtract
  */
+// @__NO_SIDE_EFFECTS__
 export const minusPrecision = createOperationPrecision((num1, num2) => {
   const baseNum = 10 ** Math.max(digitLengthPrecision(num1), digitLengthPrecision(num2));
   return (timesPrecision(num1, baseNum) - timesPrecision(num2, baseNum)) / baseNum;

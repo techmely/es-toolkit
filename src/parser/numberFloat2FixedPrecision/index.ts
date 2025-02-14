@@ -8,6 +8,7 @@ import { stripPrecision } from "../numberStripPrecision";
  *
  * @param num The input number
  */
+// @__NO_SIDE_EFFECTS__
 export function float2FixedPrecision(num: EntityId): number {
   if (num.toString().indexOf("e") === -1) {
     return Number(num.toString().replace(".", ""));

@@ -3,6 +3,7 @@
  * @param obj Object
  * @param key Key to remove
  */
+// @__NO_SIDE_EFFECTS__
 export function deleteProps(
   obj: Record<string, any>,
   propOrProps: string | string[],

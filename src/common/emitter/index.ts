@@ -32,6 +32,7 @@ export interface Emitter<Events extends Record<EventType, unknown>> {
   emit<Key extends keyof Events>(type: undefined extends Events[Key] ? Key : never): void;
 }
 
+// @__NO_SIDE_EFFECTS__
 export function emitter<Events extends Record<EventType, unknown>>(
   all?: EventHandlerMap<Events>,
 ): Emitter<Events> {

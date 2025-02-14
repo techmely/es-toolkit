@@ -1,3 +1,4 @@
+// @__NO_SIDE_EFFECTS__
 export function isSupportsRequestStreams() {
   let duplexAccessed = false;
   let hasContentType = false;

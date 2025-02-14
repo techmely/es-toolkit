@@ -5,6 +5,7 @@
             // [3, 1, 2, 4]
  * @returns
  */
+// @__NO_SIDE_EFFECTS__
 export function ranking<T = any>(arr: T[], compFn: (a: T, b: T) => boolean) {
   return arr.map((a) => arr.filter((b) => compFn(a, b)).length + 1);
 }

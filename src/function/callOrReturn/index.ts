@@ -9,6 +9,7 @@ export type MaybeReturnType<T> = T extends (...args: any) => any ? ReturnType<T>
  * @param context Optional context to bind to function.
  * @param props Optional props to pass to function.
  */
+// @__NO_SIDE_EFFECTS__
 export function callOrReturn<T>(
   value: T,
   context: any = undefined,

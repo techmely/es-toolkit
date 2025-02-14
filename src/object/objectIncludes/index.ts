@@ -5,6 +5,7 @@ import { isRegExp } from "../../predicate/isRegexp";
  * @param object1 Object
  * @param object2 Object
  */
+// @__NO_SIDE_EFFECTS__
 export function objectIncludes(
   object1: Record<string, any>,
   object2: Record<string, any>,

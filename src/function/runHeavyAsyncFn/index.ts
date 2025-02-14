@@ -4,6 +4,7 @@
  * Immediately post the return value of calling the function back
  * @returns a Promise, listening for onmessage and onerror events and resolving the data posted back from the worker, or throwing an error.
  */
+// @__NO_SIDE_EFFECTS__
 export const runAsync = (fn: () => void) => {
   const worker = new Worker(URL.createObjectURL(new Blob([`postMessage((${fn})());`])));
 

@@ -1,0 +1,8 @@
+import { windowMatchMedia } from "../../browser/matchMedia";
+export function isMobile() {
+    return typeof window !== "undefined" ? windowMatchMedia()?.("(pointer:coarse)")?.matches : false;
+}
+export function isMobileUserAgent(userAgent) {
+    const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return mobileRegex.test(userAgent);
+}

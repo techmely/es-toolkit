@@ -3,6 +3,7 @@ import { isPrefersReducedMotion } from "../../predicate/isPrefersReducedMotion";
 /**
  * Animates an element using keyframes. Returns a promise that resolves after the animation completes or gets canceled.
  */
+// @__NO_SIDE_EFFECTS__
 export function animateTo(
   el: HTMLElement,
   keyframes: Keyframe[],

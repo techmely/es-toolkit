@@ -10,6 +10,7 @@
  * @returns Map of the array grouped by the grouping function.
  */
 
+// @__NO_SIDE_EFFECTS__
 export function groupBy<K, V>(list: V[], keyGetter: (input: V) => K): Map<K, V[]> {
   const map = new Map<K, V[]>();
   for (const item of list) {

@@ -2,6 +2,7 @@ type DelayOptions = {
   signal?: AbortController["signal"] | null;
 };
 
+// @__NO_SIDE_EFFECTS__
 export async function delaySignal(ms: number, { signal }: DelayOptions): Promise<void> {
   return new Promise((resolve, reject) => {
     if (signal) {

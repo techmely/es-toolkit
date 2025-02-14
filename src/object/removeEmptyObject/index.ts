@@ -7,6 +7,7 @@ import { isNotNull } from "../../predicate/isNotNull";
  * @param {any} obj - The input obj
  * @returns {any} - the clean obj
  */
+// @__NO_SIDE_EFFECTS__
 export function removeEmptyObj(obj: any) {
   return Object.fromEntries(
     Object.entries(obj).filter(([_, v]) => isNotNull(v) && isDefined(v) && isNotEmpty(v)),

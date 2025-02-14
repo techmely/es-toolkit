@@ -10,6 +10,10 @@
       "correctness": {
         "recommended": true
       },
+      "complexity": {
+        "recommended": true,
+        "noBannedTypes": "off"
+      },
       "style": {
         "recommended": true,
         "noArguments": "off",
@@ -29,6 +33,6 @@
     "lineEnding": "lf"
   },
   "files": {
-    "ignore": ["node_modules", "coverage", "dist", ".vscode"]
+    "ignore": ["node_modules", "coverage", "dist", ".vscode", "src/**/*.d.ts", "src/**/*.js"]
   }
 }

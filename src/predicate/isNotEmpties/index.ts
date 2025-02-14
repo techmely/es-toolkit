@@ -6,6 +6,7 @@ import { isNotEmpty } from "../isNotEmpty";
  * @param {any} args any arguments
  * @returns {boolean} will return true if all value is not empty
  */
+// @__NO_SIDE_EFFECTS__
 export function isNotEmpties(...args: any[]): boolean {
   if (args.length > 1) {
     return args.reduce((a, b) => a && isNotEmpty(b), true);

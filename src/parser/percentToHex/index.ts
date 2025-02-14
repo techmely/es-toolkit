@@ -8,6 +8,7 @@ type MAXIMUM_ALLOWED_BOUNDARY = 101;
  * @param {number} percent the input value
  * @returns {string} The hex decimal
  */
+// @__NO_SIDE_EFFECTS__
 export function percentToHex(percent: ComputeRange<MAXIMUM_ALLOWED_BOUNDARY>[number]): string {
   if (percent < 0 || percent > 100) {
     throw new Error("Value must in range [0, 100]");

@@ -5,6 +5,7 @@ import type { EntityId } from "@techmely/types";
  *
  * @param num The input number
  */
+// @__NO_SIDE_EFFECTS__
 export function digitLengthPrecision(num: EntityId): number {
   // Get digit length of e
   const eSplit = num.toString().split(/[eE]/);

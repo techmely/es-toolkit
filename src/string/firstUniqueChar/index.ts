@@ -1,3 +1,4 @@
+// @__NO_SIDE_EFFECTS__
 export function firstUniqueChar(value: string) {
   if (!value) return undefined;
   const charLength = value.length;

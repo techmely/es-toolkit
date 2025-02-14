@@ -14,6 +14,7 @@
  * chunk(['a', 'b', 'c', 'd'], 3)
  * // => [['a', 'b', 'c'], ['d']]
  */
+// @__NO_SIDE_EFFECTS__
 export function chunk<T>(array: readonly T[], size = 1): T[][] {
   if (!array || array.length === 0) {
     return [];

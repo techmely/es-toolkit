@@ -9,6 +9,7 @@ import { timesPrecision } from "../numberTimesPrecision";
  * @param num The number to round
  * @param decimal An integer specifying the decimal digits
  */
+// @__NO_SIDE_EFFECTS__
 export function roundPrecision(num: EntityId, decimal: number): number {
   const base = 10 ** decimal;
   let result = dividePrecision(Math.round(Math.abs(timesPrecision(num, base))), base);

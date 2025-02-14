@@ -5,6 +5,7 @@
  * @param {number} max - Input max number
  * @returns {number} - The random number
  */
+// @__NO_SIDE_EFFECTS__
 export function getRandomIntInclusive(min: number, max: number): number {
   const _min = Math.ceil(min);
   const _max = Math.floor(max);

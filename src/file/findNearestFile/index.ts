@@ -1,6 +1,7 @@
 import path from "node:path";
 import { getDataPath } from "../getDataPath";
 
+// @__NO_SIDE_EFFECTS__
 export async function findNearestFile<T>(
   fileName: string,
   directoryPath: string = path.resolve(),

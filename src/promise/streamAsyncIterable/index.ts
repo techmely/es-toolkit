@@ -1,3 +1,4 @@
+// @__NO_SIDE_EFFECTS__
 export async function* streamAsyncIterable<T>(stream: ReadableStream<T>) {
   const reader = stream.getReader();
   try {

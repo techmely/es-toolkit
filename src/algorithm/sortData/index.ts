@@ -14,6 +14,7 @@ type SortOptions = {
  * @param direction
  * @param options
  */
+// @__NO_SIDE_EFFECTS__
 export function sortData(
   a: unknown,
   b: unknown,

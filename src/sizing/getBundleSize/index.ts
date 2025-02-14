@@ -2,6 +2,7 @@ import path from "node:path";
 import type { StringEnum } from "@techmely/types";
 import esbuild from "esbuild";
 
+// @__NO_SIDE_EFFECTS__
 export async function getBundleSize(pkg: StringEnum<"@techmely/es-toolkit">, funcName: string) {
   const script = `import { ${funcName} } from "${pkg}"; console.log(${funcName})`;
 

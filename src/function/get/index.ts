@@ -8,6 +8,7 @@
   get(obj, 'target[0]') --> 1
   get(obj, 'target[2].a'); --> 'test'
  */
+// @__NO_SIDE_EFFECTS__
 export function get(from: any, selector: string): any {
   return selector
     .replace(/\[([^\[\]]*)\]/g, ".$1.")

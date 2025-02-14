@@ -1,7 +1,7 @@
 import type { CamelToSnakeNested } from "@techmely/types";
 import { camel2snake } from "../camel2Snake";
 
-// biome-ignore lint/complexity/noBannedTypes: Ignore typing
+// @__NO_SIDE_EFFECTS__
 export function camel2SnakeObject<T extends Object>(obj: T) {
   return Object.entries(obj).reduce(
     // biome-ignore lint/performance/noAccumulatingSpread: Ignore here

@@ -5,6 +5,7 @@ interface CreateStyleTagOptions extends Record<string, any> {
   id: string;
 }
 
+// @__NO_SIDE_EFFECTS__
 export function createStyleTag(style: string, options: CreateStyleTagOptions): HTMLStyleElement {
   invariant(isBrowser());
 

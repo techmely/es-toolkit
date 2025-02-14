@@ -1,3 +1,4 @@
+// @__NO_SIDE_EFFECTS__
 export function cacheStringFunction<T extends (str: string) => string>(fn: T): T {
   const cache: Record<string, string> = Object.create(null);
   return ((str: string) => {

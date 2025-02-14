@@ -1,3 +1,4 @@
+// @__NO_SIDE_EFFECTS__
 export function firstUniqueArr(array: (string | number)[]) {
   if (!array || array?.length === 0) return undefined;
   const arrLength = array.length;

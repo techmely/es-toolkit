@@ -28,5 +28,6 @@
     "jsx": "react-jsx",
     "types": ["vite/client"]
   },
-  "include": ["src", "tests"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts", "tests/**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
 }

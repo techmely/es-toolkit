@@ -7,6 +7,7 @@
  * @param {String} alphanumeric Optional (alphanumeric), "a" (alpha), "n" (numeric)
  * @return {String}
  */
+// @__NO_SIDE_EFFECTS__
 export function getRandomString(length: number, alphanumeric?: "a" | "n"): string {
   let str = "";
   let i = 0;

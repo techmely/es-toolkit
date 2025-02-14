@@ -1,5 +1,6 @@
 import { isServer } from "../isServer";
 
+// @__NO_SIDE_EFFECTS__
 export function isSlowConnection() {
   if (isServer()) {
     return;

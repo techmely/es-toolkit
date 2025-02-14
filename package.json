@@ -25,8 +25,7 @@
     "test.unit": "vitest --passWithNoTests --isolate",
     "test.unit.run": "vitest run --passWithNoTests --isolate",
     "test.unit.coverage": "vitest --coverage",
-    "build": "cross-env NODE_ENV=production bun run ./build.ts",
-    "build.tsup": "cross-env NODE_ENV=production tsup",
+    "build": "cross-env NODE_ENV=production tsup",
     "release": "bun run ./release.ts",
     "prepare": "husky",
     "upgrade.deps": "npm-check-updates --dep dev,prod,peer -u"

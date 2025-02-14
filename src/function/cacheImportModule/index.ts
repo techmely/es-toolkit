@@ -3,6 +3,7 @@ const lazyImportCache = new Map();
 /**
  * You can use this like this const importUaParser = createCachedImport('ua-parser-js', () => import('ua-parser-js'))
  */
+// @__NO_SIDE_EFFECTS__
 export function createCachedImport<T>(name: string, imp: () => Promise<T>): () => T | Promise<T> {
   return () => {
     const cached = lazyImportCache.get(name);

@@ -1,5 +1,6 @@
 import { type ResponseTime, convertHrTime } from "../convertHrTime";
 
+// @__NO_SIDE_EFFECTS__
 export function timeSpan() {
   const start = process.hrtime.bigint();
   const end = (type: keyof ResponseTime) => convertHrTime(process.hrtime.bigint() - start)[type];

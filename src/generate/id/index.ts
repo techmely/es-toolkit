@@ -5,6 +5,7 @@ const b58 = baseX("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz");
 /**
  * Using roughly sortable ids requires fewer resources in the database when inserting or sorting data.
  */
+// @__NO_SIDE_EFFECTS__
 export function generateSortableBuff() {
   const buf = crypto.getRandomValues(new Uint8Array(20));
 
@@ -25,11 +26,13 @@ export function generateSortableBuff() {
   return buf;
 }
 
+// @__NO_SIDE_EFFECTS__
 export function generateId() {
   const buf = generateSortableBuff();
   return `${b58.encode(buf)}` as const;
 }
 
+// @__NO_SIDE_EFFECTS__
 export function generatePrefixId(prefix = "key"): string {
   return `${prefix}_${generateId()}`;
 }

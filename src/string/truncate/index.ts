@@ -5,6 +5,7 @@
  * @param limit
  * @param text
  */
+// @__NO_SIDE_EFFECTS__
 export function truncate(str: string, limit: number, text = "..."): string {
   if (str.length > limit) {
     return `${str.substring(0, limit)} ${text}`;

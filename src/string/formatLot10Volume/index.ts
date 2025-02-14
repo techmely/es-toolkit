@@ -8,6 +8,7 @@ import { isNumber } from "../../predicate/isNumber";
  * @param defaultValue
  * @returns
  */
+// @__NO_SIDE_EFFECTS__
 export function formatLot10Volume(
   volume: NullList<EntityId>,
   precision = 0,

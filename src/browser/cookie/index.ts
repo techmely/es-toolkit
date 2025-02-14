@@ -151,6 +151,7 @@ const fieldContentRegExp = /^[\u0009\u0020-\u007E\u0080-\u00FF]+$/;
  * @param str the string representing a `Cookie` header value
  * @param [options] object containing parsing options
  */
+// @__NO_SIDE_EFFECTS__
 export function parseCookie(str: string, options?: CookieParseOptions): Record<string, string> {
   if (typeof str !== "string") {
     throw new TypeError("argument str must be a string");
@@ -223,6 +224,7 @@ export function parseCookie(str: string, options?: CookieParseOptions): Record<s
  * @param [options] object containing serialization options
  * @throws {TypeError} when `maxAge` options is invalid
  */
+// @__NO_SIDE_EFFECTS__
 export function serializeCookie(
   name: string,
   value: string,
@@ -378,6 +380,7 @@ function tryDecode(str: string, decode: (v: string) => void) {
   }
 }
 
+// @__NO_SIDE_EFFECTS__
 export const listenCookieChange = (
   callback: ({ oldCookie, newCookie }) => void,
   interval = 500,

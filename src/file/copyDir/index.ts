@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
+// @__NO_SIDE_EFFECTS__
 export function copyDir(srcDir: string, destDir: string): void {
   fs.mkdirSync(destDir, { recursive: true });
   for (const file of fs.readdirSync(srcDir)) {

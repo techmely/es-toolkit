@@ -4,6 +4,7 @@
  * @param {Buffer | Uint8Array} buffer Input is a buffer
  * @returns {boolean} return true if the input is a PNG Image
  */
+// @__NO_SIDE_EFFECTS__
 export function isPngImage(buffer: Buffer | Uint8Array): boolean {
   if (!buffer || buffer.length < 8) {
     return false;

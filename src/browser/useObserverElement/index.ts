@@ -1,6 +1,7 @@
 import { invariant } from "../../common/invariant";
 import { isBrowser } from "../../predicate/isBrowser";
 
+// @__NO_SIDE_EFFECTS__
 export function useObserverElement() {
   invariant(isBrowser());
 

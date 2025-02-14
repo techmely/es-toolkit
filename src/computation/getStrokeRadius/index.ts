@@ -9,6 +9,7 @@ import { lerp } from "../lerp";
  * @param pressure
  * @returns
  */
+// @__NO_SIDE_EFFECTS__
 export function getStrokeRadius(
   size: number,
   thinning: number,

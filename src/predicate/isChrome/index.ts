@@ -1,6 +1,7 @@
 import { isEdgeBrowser } from "../isEdgeBrowser";
 import { isOpera } from "../isOpera";
 
+// @__NO_SIDE_EFFECTS__
 export function isChrome() {
   if (typeof window === "undefined") return false;
 

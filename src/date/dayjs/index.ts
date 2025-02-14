@@ -22,10 +22,12 @@ dayjs.tz.setDefault(timeZone);
  * // Format with HH:mm:ss
  * formatDate(date, 'HH:mm:ss')
  */
+// @__NO_SIDE_EFFECTS__
 export function formatDate(date: ConfigType, format = "DD/MM/YYYY"): string {
   return dayjs(date).format(format);
 }
 
+// @__NO_SIDE_EFFECTS__
 export function formatDateToNow(date: ConfigType): string {
   return dayjs(date).fromNow();
 }
@@ -33,24 +35,29 @@ export function formatDateToNow(date: ConfigType): string {
 /**
  * @param time The unix timestamp
  */
+// @__NO_SIDE_EFFECTS__
 export function parseUnix(time: number) {
   return dayjs.unix(time);
 }
 
+// @__NO_SIDE_EFFECTS__
 export function getUnixTime(date: Date) {
   return dayjs(date).unix();
 }
 
+// @__NO_SIDE_EFFECTS__
 export function formatDateUnixTime(seconds: number, format = "DD/MM/YYYY") {
   return formatDate(dayjs.unix(seconds).toISOString(), format);
 }
 
+// @__NO_SIDE_EFFECTS__
 export function diffDate(toDate: Date, fromDate: Date, config?: CompareDateConfig) {
   const formattedToDate = dayjs(toDate).format("YYYY-MM-DD");
   const formattedFromDate = dayjs(fromDate).format("YYYY-MM-DD");
   return dayjs(formattedFromDate).diff(dayjs(formattedToDate), config?.unit, config?.float);
 }
 
+// @__NO_SIDE_EFFECTS__
 export function addNewDate(date: Date, addDays = 0): Date {
   return dayjs(date).add(addDays, "day").toDate();
 }

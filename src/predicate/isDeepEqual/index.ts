@@ -1,3 +1,4 @@
+// @__NO_SIDE_EFFECTS__
 export function isDeepEqual(obj1: any, obj2: any) {
   // If both objects are strictly equal, return true
   if (obj1 === obj2) {

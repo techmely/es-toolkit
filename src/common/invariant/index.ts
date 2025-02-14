@@ -6,8 +6,11 @@ const prefix = "Invariant failed";
  * > Not providing an inline default argument for message as the result is smaller
  */
 
+// @__NO_SIDE_EFFECTS__
 export function invariant(condition: any, message?: string | (() => string)): asserts condition;
+// @__NO_SIDE_EFFECTS__
 export function invariant(condition: any, exception?: any): asserts condition;
+// @__NO_SIDE_EFFECTS__
 export function invariant(
   condition: any,
   /**

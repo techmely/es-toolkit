@@ -6,6 +6,7 @@ import type { Entity } from "@techmely/types";
  * listify(people, (key, value) => ({ name: key, ...value }));
  * [ { name: 'John', age: 42 }, { name: 'Adam', age: 39 } ]
  */
+// @__NO_SIDE_EFFECTS__
 export function listify<O extends Record<string, any>, T = any>(
   obj: O,
   mapFn: (key: string, value: Entity) => any,

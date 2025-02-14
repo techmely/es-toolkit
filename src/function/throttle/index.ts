@@ -3,6 +3,7 @@
  * It is useful for improving the performance and responsiveness of web pages
  * that have event listeners that trigger heavy or expensive operations
  */
+// @__NO_SIDE_EFFECTS__
 export function throttle<F extends (...args: any[]) => void>(func: F, limit: number) {
   let inThrottle = false;
 

@@ -7,6 +7,7 @@ import { isString } from "../isString";
  * Check a value is empty or not
  * Currently not support check WeakMap/WeakSet/WeakRef
  */
+// @__NO_SIDE_EFFECTS__
 export function isEmpty<T = unknown>(val: T): boolean {
   if (!val) {
     return true;

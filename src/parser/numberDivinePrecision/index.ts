@@ -10,6 +10,7 @@ import { timesPrecision } from "../numberTimesPrecision";
  *
  * @param nums The numbers to divide
  */
+// @__NO_SIDE_EFFECTS__
 export const dividePrecision = createOperationPrecision((num1, num2) => {
   const num1Changed = float2FixedPrecision(num1);
   const num2Changed = float2FixedPrecision(num2);

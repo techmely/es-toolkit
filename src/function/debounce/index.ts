@@ -2,6 +2,7 @@
  * @description Debouncing is a useful technique to optimize web applications by reducing unnecessary or
  * repeated function calls that might affect the performance or user experience
  */
+// @__NO_SIDE_EFFECTS__
 export function debounce<Func extends (...args: any[]) => void>(
   func: Func,
   delay: number,

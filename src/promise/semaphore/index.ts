@@ -27,6 +27,7 @@ const semaphoreMap = new Map() as Map<any, Semaphore>;
  * @param {any} [key=Symbol()] - Key used to identify the semaphore. Defaults to `Symbol()`.
  * @param {number} [concurrency=1] - Maximum concurrent tasks allowed access. Defaults to `1`.
  */
+// @__NO_SIDE_EFFECTS__
 export const getSemaphore = (key: any = Symbol(), concurrency = 1): Semaphore => {
   // return saved semaphore if exists
   if (semaphoreMap.has(key)) {

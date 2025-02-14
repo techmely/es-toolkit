@@ -2,6 +2,7 @@
  * @param text string will slugify for only Latin/Vietnamese
  * @returns {string}
  */
+// @__NO_SIDE_EFFECTS__
 export function slugify(text: string): string {
   if (!text) {
     return "";

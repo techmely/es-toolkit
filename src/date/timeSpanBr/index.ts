@@ -2,6 +2,7 @@
  * Simplified high resolution timing
  * @see https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp
  */
+// @__NO_SIDE_EFFECTS__
 export function timeSpanBr() {
   const start = performance.now();
   const end = () => performance.now() - start;

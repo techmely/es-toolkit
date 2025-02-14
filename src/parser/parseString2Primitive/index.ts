@@ -1,3 +1,4 @@
+// @__NO_SIDE_EFFECTS__
 export function parseString2Primitive(value: any): any {
   if (typeof value !== "string") {
     return value;

@@ -16,6 +16,7 @@
  * normalize([{ id: 1, value: 'One'}, { id: 1, value: 'One'}], 'key not in object') => {}
  *
  */
+// @__NO_SIDE_EFFECTS__
 export function normalize<T>(array: T[], key: keyof T): Record<typeof key, T> {
   if (!array || array.length === 0) return {} as Record<typeof key, T>;
   return array.reduce(

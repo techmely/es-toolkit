@@ -7,6 +7,7 @@
          [{ user: 'barney', age: 36, active: false }]
        ]
  */
+// @__NO_SIDE_EFFECTS__
 export function partition<T = any>(arr: T[], fn: (val: T, index: number, arr: T[]) => boolean) {
   return arr
     .reduce((acc, val, i, arr) => {

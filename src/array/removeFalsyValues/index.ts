@@ -11,6 +11,7 @@ type NotFalsy<T> = Exclude<T, false | null | 0 | "" | undefined>;
  * removeFalsyValues([0, 1, false, 2, '', 3, null, undefined, 4, NaN, 5]);
  * Returns: [1, 2, 3, 4, 5]
  */
+// @__NO_SIDE_EFFECTS__
 export function removeFalsyValues<T>(arr: readonly T[]): Array<NotFalsy<T>> {
   const result: Array<NotFalsy<T>> = [];
 

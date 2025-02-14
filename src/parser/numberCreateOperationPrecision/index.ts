@@ -5,6 +5,7 @@ import type { EntityId } from "@techmely/types";
  *
  * @param operation The original operation
  */
+// @__NO_SIDE_EFFECTS__
 export function createOperationPrecision(
   operation: (n1: EntityId, n2: EntityId) => number,
 ): (...nums: EntityId[]) => number {

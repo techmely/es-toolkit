@@ -3,6 +3,7 @@ export enum SortDirection {
   DESC = "DESC",
 }
 
+// @__NO_SIDE_EFFECTS__
 export function sortByDate<T>(
   a: T,
   b: T,

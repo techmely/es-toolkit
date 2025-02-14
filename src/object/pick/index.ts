@@ -6,6 +6,7 @@ import type { Records } from "@techmely/types";
  * - pick({ a: { b: 1 } }, ["a.b"]) => { a: { b: 1 } }
  * - pick({ a: { b: 1 } }, "a") => { a: { b: 1 } }
  */
+// @__NO_SIDE_EFFECTS__
 export function pick(state: Records, paths: string | string[]): Records {
   if (Array.isArray(paths)) {
     return paths.reduce<Records>((acc, path) => {

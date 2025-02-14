@@ -7,6 +7,7 @@ export type UtmSourceParams = {
   utmTerm?: string;
 };
 
+// @__NO_SIDE_EFFECTS__
 export function getUtmSourceUrl(
   basePath: string,
   { utmSource, utmMedium, utmCampaign, utmTerm, utmContent }: UtmSourceParams,

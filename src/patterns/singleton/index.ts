@@ -2,6 +2,7 @@
 // certain things persist across that 😆
 // Borrowed/modified from https://github.com/jenseng/abuse-the-platform/blob/2993a7e846c95ace693ce61626fa072174c8d9c7/app/utils/singleton.ts
 
+// @__NO_SIDE_EFFECTS__
 export function createSingleton<Value>(name: string, valueFactory: () => Value): Value {
   const g = globalThis;
   g.__singletons ??= new Map();
@@ -17,6 +18,7 @@ export function createSingleton<Value>(name: string, valueFactory: () => Value):
  * @param {string} name - The name under which the singleton was created.
  * @return {boolean} - A singleton existed and has been disposed.
  */
+// @__NO_SIDE_EFFECTS__
 export function disposeSingleton(name: string): boolean {
   const g = globalThis;
   g.__singletons ??= new Map();

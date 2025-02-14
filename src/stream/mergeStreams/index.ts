@@ -2,6 +2,7 @@ import { PassThrough } from "node:stream";
 import { invariant } from "../../common/invariant";
 import { isArray } from "../../predicate/isArray";
 
+// @__NO_SIDE_EFFECTS__
 export function mergeStreams(streams: NodeJS.ReadableStream[]): NodeJS.ReadableStream {
   invariant(isArray(streams), "Expect input an array streams");
 

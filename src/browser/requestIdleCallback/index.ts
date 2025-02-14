@@ -10,6 +10,7 @@ function requestIdleCallbackShim(cb: any) {
   }, 1) as unknown as number;
 }
 
+// @__NO_SIDE_EFFECTS__
 export const requestIdleCallback =
   typeof window !== "undefined"
     ? window.requestIdleCallback || requestIdleCallbackShim

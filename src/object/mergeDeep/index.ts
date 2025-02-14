@@ -10,6 +10,7 @@ import { isObject } from "../../predicate";
  * @param {...S[]} sources - The sources will merge
  * @returns {MergeDeep<T, S>} the object after merge
  */
+// @__NO_SIDE_EFFECTS__
 export function mergeDeep<T extends Record<string, any>, S extends Record<string, any>>(
   target: T,
   ...sources: S[]

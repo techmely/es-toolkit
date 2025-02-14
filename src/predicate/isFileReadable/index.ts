@@ -8,6 +8,7 @@ import fs from "node:fs";
  * @param {string} filename
  * @returns {boolean}
  */
+// @__NO_SIDE_EFFECTS__
 export function isFileReadable(filename: string): boolean {
   try {
     fs.accessSync(filename, fs.constants.R_OK);

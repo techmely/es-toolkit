@@ -3,6 +3,7 @@ import type { Readable } from "node:stream";
 /**
  * Checks if the data is a stream. (Node.js Readable Stream, React Pipeable Stream, or Web Stream)
  */
+// @__NO_SIDE_EFFECTS__
 export function isStream(value: any): value is Readable | ReadableStream {
   if (!value || typeof value !== "object") {
     return false;

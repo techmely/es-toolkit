@@ -7,6 +7,7 @@ const getTimezoneOffset = (date: Date) => {
   return `${diff + pad(tzOffset / 60)}:${pad(tzOffset % 60)}`;
 };
 
+// @__NO_SIDE_EFFECTS__
 export function toISOStringTimezone(date: Date) {
   // biome-ignore format: For beautiful
   return (

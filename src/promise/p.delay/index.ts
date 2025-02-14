@@ -8,10 +8,12 @@ const createAbortError = () => {
 
 const clearMethods = new WeakMap();
 
+// @__NO_SIDE_EFFECTS__
 export function delay<T = any>(milliseconds: number, options?: DelayOptions<T>) {
   return createDelay<T>(milliseconds, options);
 }
 
+// @__NO_SIDE_EFFECTS__
 export function createDelay<T = any>(
   milliseconds: number,
   { value, signal }: DelayOptions<T> = {},
@@ -58,6 +60,7 @@ export function createDelay<T = any>(
   return delayPromise;
 }
 
+// @__NO_SIDE_EFFECTS__
 export async function rangeDelay<T>(
   minimum: number,
   maximum: number,
@@ -66,6 +69,7 @@ export async function rangeDelay<T>(
   return delay(getRandomInt(minimum, maximum), options);
 }
 
+// @__NO_SIDE_EFFECTS__
 export function clearDelay(promise: Promise<unknown>) {
   clearMethods.get(promise)?.();
 }

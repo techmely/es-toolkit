@@ -9,6 +9,7 @@ interface FormatBytesOptions {
  * @param {Partial<FormatBytesOptions>} options - Options to pass to this function.
  * @returns {string} A formatted number that ends in bytes, KB, MB, GB, TB, PB, EB, ZB, or YB
  */
+// @__NO_SIDE_EFFECTS__
 export const formatBytes = (bytes: number, options?: Partial<FormatBytesOptions>): string => {
   const sizes = ["bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
   const { numberOfDecimals = 0 } = options ?? {};

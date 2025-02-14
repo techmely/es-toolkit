@@ -1,3 +1,4 @@
+// @__NO_SIDE_EFFECTS__
 export function isIOS(): boolean {
   return typeof navigator !== "undefined"
     ? ["iPad Simulator", "iPhone Simulator", "iPod Simulator", "iPad", "iPhone", "iPod"].includes(
