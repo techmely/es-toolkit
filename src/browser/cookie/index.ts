@@ -151,10 +151,7 @@ const fieldContentRegExp = /^[\u0009\u0020-\u007E\u0080-\u00FF]+$/;
  * @param str the string representing a `Cookie` header value
  * @param [options] object containing parsing options
  */
-export function parseCookie(
-  str: string,
-  options?: CookieParseOptions
-): Record<string, string> {
+export function parseCookie(str: string, options?: CookieParseOptions): Record<string, string> {
   if (typeof str !== "string") {
     throw new TypeError("argument str must be a string");
   }
@@ -229,7 +226,7 @@ export function parseCookie(
 export function serializeCookie(
   name: string,
   value: string,
-  options?: CookieSerializeOptions
+  options?: CookieSerializeOptions,
 ): string {
   const opt = options || {};
   const enc = opt.encode || encode;
@@ -295,10 +292,7 @@ export function serializeCookie(
   }
 
   if (opt.priority) {
-    const priority =
-      typeof opt.priority === "string"
-        ? opt.priority.toLowerCase()
-        : opt.priority;
+    const priority = typeof opt.priority === "string" ? opt.priority.toLowerCase() : opt.priority;
 
     switch (priority) {
       case "low":
@@ -316,10 +310,7 @@ export function serializeCookie(
   }
 
   if (opt.sameSite) {
-    const sameSite =
-      typeof opt.sameSite === "string"
-        ? opt.sameSite.toLowerCase()
-        : opt.sameSite;
+    const sameSite = typeof opt.sameSite === "string" ? opt.sameSite.toLowerCase() : opt.sameSite;
 
     switch (sameSite) {
       case true:
@@ -389,7 +380,7 @@ function tryDecode(str: string, decode: (v: string) => void) {
 
 export const listenCookieChange = (
   callback: ({ oldCookie, newCookie }) => void,
-  interval = 500
+  interval = 500,
 ) => {
   let lastCookie = document.cookie;
   setInterval(() => {

@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.4.0
+
+### Minor Changes
+
+- Upgrade dependencies + check why do not have typing correctly
+
 ## 1.3.2
 
 ### Patch Changes

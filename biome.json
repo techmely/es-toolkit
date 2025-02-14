@@ -26,7 +26,7 @@
     "indentWidth": 2,
     "indentStyle": "space",
     "lineWidth": 100,
-    "formatWithErrors": false
+    "lineEnding": "lf"
   },
   "files": {
     "ignore": ["node_modules", "coverage", "dist", ".vscode"]

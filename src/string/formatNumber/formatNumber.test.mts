@@ -9,7 +9,6 @@ const dataTestFormatNumber = [
   [undefined, 0, "*", "*"],
 ];
 
-
 test.concurrent.each(dataTestFormatNumber)(
   "When input is %d, precision %d, fallbackValue %s, should return %s ",
   (input, precision, fallbackValue, expected) => {
