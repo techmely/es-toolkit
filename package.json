@@ -1,6 +1,6 @@
 {
   "name": "@techmely/es-toolkit",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Collection of helpful JavaScript / TypeScript utils",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
@@ -19,6 +19,9 @@
     "directory": "dist",
     "tag": "latest"
   },
+  "files": [
+    "."
+  ],
   "scripts": {
     "lint.format": "biome lint --write .",
     "clean": "rm -f dist node_modules",

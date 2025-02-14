@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.5.1
+
+### Patch Changes
+
+- Add missing files includes
+
 ## 1.5.0
 
 ### Minor Changes
