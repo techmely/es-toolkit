@@ -1,6 +1,6 @@
 {
   "name": "@techmely/es-toolkit",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Collection of helpful JavaScript / TypeScript utils",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
@@ -22,6 +22,33 @@
   "files": [
     "."
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./date/*": {
+      "types": "./dist/date/*.d.ts",
+      "require": "./dist/date/*.js",
+      "default": "./dist/date/*.js"
+    },
+    "./git/*": {
+      "types": "./dist/git/*.d.ts",
+      "require": "./dist/git/*.js",
+      "default": "./dist/git/*.js"
+    },
+    "./promise/*": {
+      "types": "./dist/promise/*.d.ts",
+      "require": "./dist/promise/*.js",
+      "default": "./dist/promise/*.js"
+    },
+    "./stream/*": {
+      "types": "./dist/stream/*.d.ts",
+      "require": "./dist/stream/*.js",
+      "default": "./dist/stream/*.js"
+    }
+  },
   "scripts": {
     "lint.format": "biome lint --write .",
     "clean": "rm -f dist node_modules",
