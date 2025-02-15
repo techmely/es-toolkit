@@ -19,13 +19,7 @@
     "directory": "dist",
     "tag": "latest"
   },
-  "files": [
-    "dist",
-    "package.json",
-    "README.md",
-    "CHANGELOG.md",
-    "LICENSE"
-  ],
+  "files": ["dist", "package.json", "README.md", "CHANGELOG.md", "LICENSE"],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -56,6 +50,11 @@
       "types": "./dist/file/index.d.ts",
       "require": "./dist/file/index.cjs",
       "import": "./dist/file/index.js"
+    },
+    "./generate": {
+      "types": "./dist/generate/index.d.ts",
+      "require": "./dist/generate/index.cjs",
+      "import": "./dist/generate/index.js"
     }
   },
   "scripts": {
@@ -67,7 +66,8 @@
     "build": "cross-env NODE_ENV=production tsup",
     "release": "npm publish",
     "prepare": "husky",
-    "upgrade.deps": "npm-check-updates --dep dev,prod,peer -u"
+    "upgrade.deps": "npm-check-updates --dep dev,prod,peer -u",
+    "clean-indexes": "bun scripts/clean-indexes.ts"
   },
   "peerDependencies": {
     "dayjs": "^1.11.13",
@@ -116,11 +116,7 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": [
-    "techmely",
-    "techmely-utils",
-    "techmely es toolkit"
-  ],
+  "keywords": ["techmely", "techmely-utils", "techmely es toolkit"],
   "engines": {
     "node": ">=20"
   }
