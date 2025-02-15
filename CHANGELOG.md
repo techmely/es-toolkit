@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.6.0
+
+### Minor Changes
+
+- Remove unnecessary code + expose generate
+
 ## 1.5.5
 
 ### Patch Changes
