@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 1.7.0
+
+### Minor Changes
+
+- Add resolve lazy object function
+
 ## 1.6.0
 
 ### Minor Changes
